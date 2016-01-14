@@ -1,0 +1,9 @@
+<h1><%= link_to "Culdesac", root_path %></h1>
+
+<%= link_to "Create a game", new_game_path %>
+
+<ul>
+  <% @games.each do |game| %>
+    <li><%= link_to game.name, game %></li>
+  <% end %>
+</ul>

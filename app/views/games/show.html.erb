@@ -1,0 +1,22 @@
+<h1><%= link_to "Culdesac", root_path %></h1>
+
+<h2><%= @game.name %></h2>
+  <strong>Category: </strong><%= @game.category %>
+  <br>
+  <strong>Equipment: </strong><%= @game.equipment %>
+  <br>
+  <strong>Number of Players: </strong><%= @game.num_players %>
+  <br>
+  <strong>Number of Teams: </strong><%= @game.num_teams %>
+  <br>
+  <strong>Duration: </strong><%= @game.game_duration %> minutes
+  <br>
+
+  <%= image_tag @game.image_url %>
+  <br>
+  <br>
+  <strong>Description: </strong><%= @game.description %>
+  <br>
+  <br>
+  <%= link_to "Edit", edit_game_path(@game) %> ||
+  <%= link_to "Delete", @game, method: :delete %>
