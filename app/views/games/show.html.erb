@@ -26,5 +26,11 @@
   <strong>Description: </strong><%= @game.description %>
   <br>
   <br>
-  <%= link_to "Edit", edit_game_path(@game) %> ||
-  <%= link_to "Delete", @game, method: :delete %>
+
+  <% if current_user == @game.user %>
+    <%= link_to "Edit", edit_game_path(@game) %> ||
+  <% end %>
+
+  <% if current_user == @game.user %>
+    <%= link_to "Delete", @game, method: :delete %>
+  <% end %>

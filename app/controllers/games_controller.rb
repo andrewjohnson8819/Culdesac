@@ -9,7 +9,6 @@ class GamesController < ApplicationController
     # else
     #   @games = Game.all
     # end
-
     if params[:category]
       @games = Game.search(params[:category]).paginate(page: params[:games_page])
     else
@@ -28,7 +27,7 @@ class GamesController < ApplicationController
   def create
       # does the same thing as set_game in the before_action
     # @game = current_user.games.create(game_params)
-    @game = Game.create(game_params)
+    @game = Game.create(game_params.merge(user: current_user))
     redirect_to @game
   end
 
@@ -38,7 +37,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @game.update(game_params)
+    @game.update(game_params.merge(user: current_user))
     redirect_to @game
   end
 
