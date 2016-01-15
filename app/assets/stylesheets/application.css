@@ -14,23 +14,41 @@
  *= require_self
  */
 
-body {
-  background:
-    url(http://i.imgur.com/GCIsnqk.png) 200px no-repeat,
-    url(http://i.imgur.com/b73AUs0.png) no-repeat fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
+* {
+  box-sizing: border-box;
 }
 
-.navbar {
+/*body {
+    background: url(http://i.imgur.com/b73AUs0.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+  background-size: cover;
+  margin: 0px auto;
+}*/
+
+header {
+
+}
+
+.navbar-culdesac {
+  margin-top: 0;
+  padding-bottom: 20px;
   background-color: #61c4e9;
   position: relative;
-  align-items: center
+  padding: 10px 0 10px 20px;
 }
+
+h3 {
+
+  text-align: right;
+  margin-top: 10px;
+  position: relative;
+
+}
+
 
 .panel {
   max-width: 333px;
-  float: left;
 }
 
 .img {

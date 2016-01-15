@@ -2,11 +2,11 @@
 <%= form_tag games_path, :method => 'get' do %>
   <p>
     <%= select_tag :category, options_for_select(["Active", "Cards", "Party", "Car", "Play-along"]), :class => "btn btn-default dropdown-toggle btn-lg" %>
-    <%= submit_tag "Search by category", :name => nil, :class => 'btn btn-success btn-sm' %>
+    <%= submit_tag "Search by category", :name => nil, :class => 'btn btn-default btn-sm' %>
   </p>
 <% end %>
 
-<%= link_to "Create a game", new_game_path, :class => "btn btn-info btn-md" %>
+<%= link_to "Create a game", new_game_path, :class => "btn btn-success btn-md" %>
 
 
 
