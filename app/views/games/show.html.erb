@@ -1,6 +1,13 @@
-<h1><%= link_to "Culdesac", root_path %></h1>
+
 
 <h2><%= @game.name %></h2>
+
+  <% if Favorite.find_by(user: current_user, game: @game) %>
+    <%= link_to "/images/star_favorite_filled.png", remove_favorite_game_path(@game), method: :delete, class: "fav" %>
+    <% else %>
+      <%= link_to "/images/star_favorite_unfilled.png", add_favorite_game_path(@game), method: :post, class: "no-fav" %>
+    <% end %>
+
   <strong>Category: </strong><%= @game.category %>
   <br>
   <strong>Equipment: </strong><%= @game.equipment %>

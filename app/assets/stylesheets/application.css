@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .fav {
+   width: 20px;
+ }
+
+ .no-fav {
+   width: 20px;
+ }
