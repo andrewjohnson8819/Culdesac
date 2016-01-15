@@ -15,10 +15,13 @@
  */
 
 
- .fav {
-   width: 20px;
+
+ a.fav {
+   color: #ce3641;
+   text-decoration: none;
  }
 
- .no-fav {
-   width: 20px;
+ a.no-fav {
+   color: black;
+   text-decoration: none;
  }
