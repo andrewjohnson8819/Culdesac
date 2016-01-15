@@ -1,7 +1,7 @@
 class Game < ActiveRecord::Base
-default_scope {order('created_at DESC')}
+  default_scope {order('created_at ASC')}
 
-  def self.search(search)
+  def Game.search(search)
     where("category LIKE ?", "%#{search}%")
   end
 
