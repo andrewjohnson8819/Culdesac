@@ -1,5 +1,12 @@
 <h1><%= link_to "Culdesac", root_path %></h1>
 
+<%= form_tag games_path, :method => 'get' do %>
+  <p>
+    <%= select_tag :category, options_for_select(["Active", "Cards", "Party", "Car", "Play-along"])%>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <%= link_to "Create a game", new_game_path %>
 
 <ul>

@@ -1,7 +1,11 @@
 class GamesController < ApplicationController
 
   def index
-    @games = Game.all
+    if params[:category]
+      @games = Game.search(params[:category]).paginate(page: params[:games_page])
+    else
+      @games = Game.all.paginate(page: params[:games_page])
+    end
   end
 
   def show
