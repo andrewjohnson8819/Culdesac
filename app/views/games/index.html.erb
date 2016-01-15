@@ -1,16 +1,28 @@
 
-
 <%= form_tag games_path, :method => 'get' do %>
   <p>
-    <%= select_tag :category, options_for_select(["Active", "Cards", "Party", "Car", "Play-along"])%>
-    <%= submit_tag "Search by category", :name => nil %>
+    <%= select_tag :category, options_for_select(["Active", "Cards", "Party", "Car", "Play-along"]), :class => "btn btn-default dropdown-toggle btn-lg" %>
+    <%= submit_tag "Search by category", :name => nil, :class => 'btn btn-success btn-sm' %>
   </p>
 <% end %>
 
-<%= link_to "Create a game", new_game_path %>
+<%= link_to "Create a game", new_game_path, :class => "btn btn-info btn-md" %>
 
-<ul>
+
+
   <% @games.each do |game| %>
-    <li><%= link_to game.name, game %></li>
+
+  <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading"><%= link_to game.name, game %></div>
+        <div class="panel-body">
+          <p><%= "#{game.category}" %></p>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><%= image_tag "#{game.image_url}", class: "img" %></li>
+
+        </ul>
+      </div>
+    </div>
+
   <% end %>
-</ul>

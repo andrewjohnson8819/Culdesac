@@ -1,8 +1,8 @@
 == README
 
 
-- add devise and user sign up/log in
-- add favoriting
 - add profile view
 - Add styling w/bootstrap and background index link buttons
 - Add rails validations in model
+- Add users to seeded data
+- turn category and search buttons into a single split button dropdown

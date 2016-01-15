@@ -14,14 +14,41 @@
  *= require_self
  */
 
+body {
+  background:
+    url(http://i.imgur.com/GCIsnqk.png) 200px no-repeat,
+    url(http://i.imgur.com/b73AUs0.png) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+}
 
+.navbar {
+  background-color: #61c4e9;
+  position: relative;
+  align-items: center
+}
 
- a.fav {
+.panel {
+  max-width: 333px;
+  float: left;
+}
+
+.img {
+  max-width: 300px;
+  border-radius: 20px;
+}
+
+.show_image {
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+a.fav {
    color: #ce3641;
    text-decoration: none;
  }
 
- a.no-fav {
+a.no-fav {
    color: black;
    text-decoration: none;
  }

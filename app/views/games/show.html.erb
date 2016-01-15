@@ -20,7 +20,7 @@
   <strong>Duration: </strong><%= @game.game_duration %> minutes
   <br>
 
-  <%= image_tag @game.image_url %>
+  <%= image_tag @game.image_url, :class => "show_image" %>
   <br>
   <br>
   <strong>Description: </strong><%= @game.description %>
@@ -28,9 +28,9 @@
   <br>
 
   <% if current_user == @game.user %>
-    <%= link_to "Edit", edit_game_path(@game) %> ||
+    <%= link_to "", edit_game_path(@game), :class => "glyphicon glyphicon-pencil btn btn-warning btn-sm" %>
   <% end %>
 
   <% if current_user == @game.user %>
-    <%= link_to "Delete", @game, method: :delete %>
+    <%= link_to "", @game, method: :delete, :class => 'glyphicon glyphicon-remove btn btn-danger btn-sm' %>
   <% end %>

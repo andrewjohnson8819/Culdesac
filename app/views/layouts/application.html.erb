@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name = "viewport" content = "width = device-width, initial-scale = 1">
   <title>Culdesac</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
 <body>
-  <header>
-    <h1><%= link_to "Culdesac", root_path %></h1>
+  <!-- data-spy="affix" data-offset-top="0" -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <h1 class="navbar-culdesac" data-toggle="tooltop" data-placement="bottom" title="Home Button"><%= link_to "Culdesac", root_path %></h1>
 
-    <% if current_user %>
-      Welcome, <%= current_user.email %>
-      <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
-    <% else %>
-      <h3><%= link_to 'Signup', new_user_registration_path %></h3>
-      <h3><%= link_to 'Login', new_user_session_path %></h3>
-    <% end %>
-  </header>
+        <% if current_user %>
+          Welcome, <%= current_user.email %>
+          <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
+        <% else %>
+          <h3><%= link_to 'Signup', new_user_registration_path %></h3>
+          <h3><%= link_to 'Login', new_user_session_path %></h3>
+        <% end %>
+      </div>
+    </div>
+  </nav>
 
 <%= yield %>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
 </html>
